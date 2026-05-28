@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наследие индустрии | Умный подбор локации</title>
+    <!-- Bootstrap 5 CSS + Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #f5f7fe 0%, #eef2f9 100%);
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        /* Подключение шрифта Inter через Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+
+        /* Стилизация скроллбара */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e9ecef;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #adb5bd;
+            border-radius: 10px;
+        }
+        .app-wrapper {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+        /* Боковая панель истории */
+        .history-sidebar {
+            width: 300px;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(2px);
+            border-right: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 20px rgba(0,0,0,0.03);
+            z-index: 10;
+        }
+        .history-header {
+            padding: 24px 20px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #1e2a3e;
+            border-bottom: 1px solid #eef2f9;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .history-header i {
+            font-size: 1.4rem;
+            color: #2c7da0;
+        }
+        .history-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px 12px;
+        }
+        .history-item {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 14px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid #eef2f9;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+        .history-item:hover {
+            background: #f8fafc;
+            transform: translateX(3px);
+            border-color: #cbd5e1;
+        }
+        .history-item-title {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #0f172a;
+            margin-bottom: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .history-item-sub {
+            font-size: 0.7rem;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .clear-history {
+            margin: 16px 12px;
+            padding: 8px;
+            background: none;
+            border: 1px solid #e2e8f0;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #475569;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .clear-history:hover {
+            background: #fee2e2;
+            border-color: #fecaca;
+            color: #b91c1c;
+        }
+        /* Основной контент */
+        .main-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px 32px;
+        }
+        .card {
+            border: none;
+            border-radius: 28px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(0px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            margin-bottom: 28px;
+            transition: transform 0.2s;
+        }
+        .card-header {
+            background: transparent;
+            border-bottom: 1px solid #edf2f7;
+            font-weight: 600;
+            padding: 18px 24px;
+            font-size: 1rem;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-header i {
+            font-size: 1.3rem;
+            color: #3b82f6;
+        }
+        #map {
+            height: 380px;
+            border-radius: 24px;
+            z-index: 1;
+            overflow: hidden;
+            margin: 4px;
+        }
+        .btn-primary {
+            background: #1e3a8a;
+            border: none;
+            padding: 12px 32px;
+            font-weight: 600;
+            border-radius: 40px;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        .btn-primary:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+        }
+        .table-sm td, .table-sm th {
+            padding: 10px 12px;
+            vertical-align: middle;
+        }
+        .badge-soft {
+            background: #eef2ff;
+            color: #1e3a8a;
+            border-radius: 30px;
+            padding: 4px 12px;
+            font-size: 0.7rem;
+        }
+        .region-tag {
+            background: #eef2ff;
+            border-radius: 30px;
+            padding: 6px 14px;
+            font-size: 0.75rem;
+            color: #1e3a8a;
+        }
+        .footer-placeholder {
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.75rem;
+            margin-top: 40px;
+            opacity: 0.7;
+        }
+        /* Анимация появления */
+        .result-section {
+            animation: fadeUp 0.5s ease;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        /* Форма */
+        .form-label {
+            font-weight: 500;
+            color: #334155;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+        .form-control, .form-select {
+            border-radius: 14px;
+            border: 1px solid #e2e8f0;
+            padding: 10px 14px;
+            transition: 0.2s;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+        }
+        .form-check-input:checked {
+            background-color: #1e3a8a;
+            border-color: #1e3a8a;
+        }
+        h1 {
+            font-weight: 700;
+            background: linear-gradient(135deg, #0f2b3d, #1e4a76);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        @media (max-width: 768px) {
+            .history-sidebar {
+                width: 260px;
+            }
+            .main-content {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="app-wrapper">
+    <!-- Левая панель: история -->
+    <div class="history-sidebar">
+        <div class="history-header">
+            <i class="bi bi-clock-history"></i> История запросов
+        </div>
+        <div class="history-list" id="historyList">
+            <div class="text-muted text-center p-3">Пока пусто</div>
+        </div>
+        <button class="clear-history" id="clearHistoryBtn">
+            <i class="bi bi-trash3"></i> Очистить историю
+        </button>
+    </div>
+
+    <!-- Основная область -->
+    <div class="main-content">
+        <div class="text-center mb-4">
+            <h1 class="display-5 fw-bold">Наследие индустрии</h1>
+            <p class="lead text-muted">Умный подбор локации для завода сэндвич-панелей с региональным характером</p>
+        </div>
+
+        <!-- Форма ввода (10 полей) -->
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-sliders2"></i> Параметры инвестиционного проекта
+            </div>
+            <div class="card-body">
+                <form id="investorForm">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label class="form-label">1. Объём выпуска (тыс. м²/год)</label>
+                            <input type="number" class="form-control" id="volume" min="100" max="1000" value="300" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">2. Кол-во сотрудников</label>
+                            <input type="number" class="form-control" id="employees" min="10" max="200" value="80" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">3. Бюджет (млн ₽)</label>
+                            <input type="number" class="form-control" id="budget" min="10" max="300" value="120" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">4. Нужна ж/д ветка</label>
+                            <select class="form-select" id="need_rail">
+                                <option value="false">Нет</option>
+                                <option value="true">Да</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">5. Макс. расстояние до трассы (км)</label>
+                            <input type="number" class="form-control" id="max_highway" min="1" max="100" value="30">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">6. Архитектурный приоритет</label>
+                            <select class="form-select" id="arch_style">
+                                <option>Аутентичность региону</option>
+                                <option>Техно-стиль</option>
+                                <option>Экодизайн</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label">7. Благоустройство (до 3)</label>
+                            <div class="d-flex flex-wrap gap-3 mt-1">
+                                <div class="form-check"><input class="form-check-input landscaping" type="checkbox" value="Аллея"> <label class="form-check-label">Аллея</label></div>
+                                <div class="form-check"><input class="form-check-input landscaping" type="checkbox" value="Сквер с фонтаном"> <label class="form-check-label">Сквер с фонтаном</label></div>
+                                <div class="form-check"><input class="form-check-input landscaping" type="checkbox" value="Беседки"> <label class="form-check-label">Беседки</label></div>
+                                <div class="form-check"><input class="form-check-input landscaping" type="checkbox" value="Сцена"> <label class="form-check-label">Сцена</label></div>
+                                <div class="form-check"><input class="form-check-input landscaping" type="checkbox" value="Тропа здоровья"> <label class="form-check-label">Тропа здоровья</label></div>
+                                <div class="form-check"><input class="form-check-input landscaping" type="checkbox" value="Пруд"> <label class="form-check-label">Пруд</label></div>
+                                <div class="form-check"><input class="form-check-input landscaping" type="checkbox" value="Арт-объект"> <label class="form-check-label">Арт-объект</label></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">8. Обеспечение жильём</label>
+                            <select class="form-select" id="housing_pct">
+                                <option value="0">0%</option><option value="30">30%</option><option value="50">50%</option><option value="70">70%</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Тип жилья</label>
+                            <select class="form-select" id="housing_type">
+                                <option value="Общежитие">Общежитие</option><option value="Квартиры">Квартиры</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">9. Детский сад (мест на 100 сотр.)</label>
+                            <select class="form-select" id="kinder_places">
+                                <option value="0">0</option><option value="15">15</option><option value="30">30</option><option value="50">50</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label">10. Спортобъекты (до 2)</label>
+                            <div class="d-flex flex-wrap gap-3 mt-1">
+                                <div class="form-check"><input class="form-check-input sports" type="checkbox" value="Стадион"> <label class="form-check-label">Стадион</label></div>
+                                <div class="form-check"><input class="form-check-input sports" type="checkbox" value="Бассейн"> <label class="form-check-label">Бассейн</label></div>
+                                <div class="form-check"><input class="form-check-input sports" type="checkbox" value="Спортзал"> <label class="form-check-label">Спортзал</label></div>
+                                <div class="form-check"><input class="form-check-input sports" type="checkbox" value="Хоккейная коробка"> <label class="form-check-label">Хоккейная коробка</label></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <button type="button" class="btn btn-primary" onclick="calculateAndRank()">
+                            <i class="bi bi-search"></i> Найти участок и рассчитать
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Блок результатов -->
+        <div id="resultsBlock" style="display: none;">
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-map"></i> ТОП-3 региона на карте
+                </div>
+                <div class="card-body p-2">
+                    <div id="map"></div>
+                </div>
+            </div>
+            <div id="top3Comparison"></div>
+            <div id="detailedReports"></div>
+            <div class="card mt-4">
+    <div class="card-header">
+        <i class="bi bi-box"></i> 3D-сцена проекта
+    </div>
+    <div class="card-body p-2">
+        <div id="scene3d" style="height: 650px; border-radius: 24px; overflow: hidden;"></div>
+    </div>
+</div>
+            <div class="alert alert-light border-0 shadow-sm mt-3" style="background: #f8fafc; border-radius: 24px;">
+                <i class="bi bi-gpu-card"></i> <strong>LLM и 3D-визуализация (заглушка):</strong> здесь появятся концепт-борд и промпты для рендеров на основе ТОП-1 региона.
+            </div>
+        </div>
+        <div class="footer-placeholder">
+            © 2026 — Умный подбор с душой региона
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="logic.js"></script>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import { renderIndustrialScene } from "./scene3d.js";
+
+window.renderIndustrialScene = renderIndustrialScene; // чтобы вызвать из logic.js
+</script>
+</body>
+</html>

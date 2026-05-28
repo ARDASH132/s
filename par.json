@@ -1,0 +1,765 @@
+{
+  "regions": [
+    {
+      "id": "mos",
+      "name": "Московская область",
+      "coords": [ 55.628, 37.738 ],
+      "4.1_logistics": {
+        "steel_distance_to_plant_km": 450,
+        "steel_distance_to_dealer_km": 35,
+        "insulation_distance_to_plant_km": 160,
+        "insulation_distance_to_dealer_km": 20
+      },
+      "4.2_social": {
+        "environment_index": 260,
+        "kindergartens_per_100_children": 90,
+        "vocational_colleges_count": 20,
+        "rent_1room_avg_rub": 50000
+      },
+      "4.3_economics": {
+        "tax_incentives": "ОЭЗ",
+        "insurance_reduction": true,
+        "energy_tariff_rub_per_kwh": 9,
+        "avg_salary_rub": 151000,
+        "ecology_class": 2.6
+      },
+      "4.5_cultural_code": {
+        "architecture_styles": [ "классицизм", "сталинский ампир", "русский стиль" ],
+        "traditional_materials": [ "белый камень", "изразец", "штукатурка" ],
+        "color_profile": [ "белый", "голубой", "золотой", "терракотовый" ],
+        "ornaments": [ "растительный орнамент", "меандр" ]
+      },
+      "sites": [
+        {
+          "area_ha": 0.15,
+          "land_plot_number": "50:09:0020328:132",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "обл. Московская, р-н Солнечногорский, с/пос. Пешковское, в районе д. Пешки",
+          "deal_type": "аренда",
+          "lease_term_years": 15,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 600,
+            "distance_to_substation_km": 1.5,
+            "grid_connection_price_rub_per_kw": 5395.73
+          }
+        }
+      ]
+    },
+    {
+      "id": "len",
+      "name": "Ленинградская область",
+      "coords": [ 59.931, 30.361 ],
+      "4.1_logistics": {
+        "steel_distance_to_plant_km": 436,
+        "steel_distance_to_dealer_km": 15,
+        "insulation_distance_to_plant_km": 40,
+        "insulation_distance_to_dealer_km": 40
+      },
+      "4.2_social": {
+        "environment_index": 237,
+        "kindergartens_per_100_children": 92,
+        "vocational_colleges_count": 16,
+        "rent_1room_avg_rub": 40000
+      },
+      "4.3_economics": {
+        "tax_incentives": "ТОР",
+        "insurance_reduction": true,
+        "energy_tariff_rub_per_kwh": 9.65,
+        "avg_salary_rub": 110000,
+        "ecology_class": 6
+      },
+      "4.5_cultural_code": {
+        "architecture_styles": [ "барокко", "классицизм", "неоготика", "северный модерн", "неорусский стиль" ],
+        "traditional_materials": [ "хвойные породы дерева", "дуб" ],
+        "color_profile": [ "зелёный", "коричневый", "охра" ],
+        "ornaments": [ "растительные орнаменты", "геометрические орнаменты", "стилизованная северная флора" ]
+      },
+      "sites": [
+        {
+          "area_ha": 0.1,
+          "land_plot_number": "47:26:0604001:54",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "Ленинградская область, Тосненский район, массив «Радофинниково», СНТ «Надежда» (в районе п. Радофинниково)",
+          "deal_type": "аренда",
+          "lease_term_years": 49,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 500,
+            "distance_to_substation_km": 1,
+            "grid_connection_price_rub_per_kw": 6813.46
+          }
+        },
+        {
+          "area_ha": 25,
+          "land_plot_number": "47:23:0920001:1115",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "Ленинградская область, Гатчинский округ, Дружногорское территориальное управление, гп. Дружная Горка, тер. Промышленная площадка №1, з/у 1",
+          "deal_type": "аренда",
+          "lease_term_years": 10,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 650,
+            "distance_to_substation_km": 1.5,
+            "grid_connection_price_rub_per_kw": 6813.46
+          }
+        }
+      ]
+    },
+    {
+      "id": "tat",
+      "name": "Республика Татарстан",
+      "coords": [ 55.796, 49.108 ],
+      "4.1_logistics": {
+        "steel_distance_to_plant_km": 6,
+        "steel_distance_to_dealer_km": 6,
+        "insulation_distance_to_plant_km": 234,
+        "insulation_distance_to_dealer_km": 234
+      },
+      "4.2_social": {
+        "environment_index": 240,
+        "kindergartens_per_100_children": 73,
+        "vocational_colleges_count": 26,
+        "rent_1room_avg_rub": 30000
+      },
+      "4.3_economics": {
+        "tax_incentives": "ОЭЗ",
+        "insurance_reduction": true,
+        "energy_tariff_rub_per_kwh": 8,
+        "avg_salary_rub": 85000,
+        "ecology_class": 7.3
+      },
+      "4.5_cultural_code": {
+        "architecture_styles": [ "татарское традиционное зодчество", "барокко", "классицизм", "модерн", "неоклассицизм" ],
+        "traditional_materials": [ "дерево", "кирпич", "саман" ],
+        "color_profile": [ "жёлтый", "зелёный", "голубой", "белый", "красный", "синий" ],
+        "ornaments": [ "геометрические узоры", "растительные мотивы", "арабески" ]
+      },
+      "sites": [
+        {
+          "area_ha": 0.0335,
+          "land_plot_number": "16:25:190904:523",
+          "price_rub": 55376,
+          "price_condition": null,
+          "address": null,
+          "deal_type": "аренда",
+          "lease_term_years": null,
+          "4.4_infrastructure": {
+            "gas_available": false,
+            "free_power_kva": 1500,
+            "distance_to_substation_km": 1.5,
+            "grid_connection_price_rub_per_kw": 2510
+          }
+        },
+        {
+          "area_ha": 2.74,
+          "land_plot_number": "16:17:130112:42",
+          "price_rub": 6162413,
+          "price_condition": null,
+          "address": "Республика Татарстан, Дрожжановский район, с. Ст. Дрожжаное, ул. Школьная, д.32",
+          "deal_type": "аренда",
+          "lease_term_years": null,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 1600,
+            "distance_to_substation_km": 1,
+            "grid_connection_price_rub_per_kw": 2511
+          }
+        }
+      ]
+    },
+    {
+      "id": "lip",
+      "name": "Липецкая область",
+      "coords": [ 52.607, 39.599 ],
+      "4.1_logistics": {
+        "steel_distance_to_plant_km": 10,
+        "steel_distance_to_dealer_km": 10,
+        "insulation_distance_to_plant_km": 20,
+        "insulation_distance_to_dealer_km": 20
+      },
+      "4.2_social": {
+        "environment_index": 212,
+        "kindergartens_per_100_children": 100,
+        "vocational_colleges_count": 7,
+        "rent_1room_avg_rub": 22000
+      },
+      "4.3_economics": {
+        "tax_incentives": "ОЭЗ",
+        "insurance_reduction": true,
+        "energy_tariff_rub_per_kwh": 6.2,
+        "avg_salary_rub": 76460,
+        "ecology_class": 4
+      },
+      "4.5_cultural_code": {
+        "architecture_styles": [ "русский классицизм", "барокко", "советский неоклассицизм", "брутализм" ],
+        "traditional_materials": [ "местный известняк", "красный кирпич", "кованый металл" ],
+        "color_profile": [ "терракотово-красный", "белый", "песочный", "серый" ],
+        "ornaments": [ "елецкое кружево (растительные и геометрические мотивы)" ]
+      },
+      "sites": [
+        {
+          "area_ha": 8,
+          "land_plot_number": "48:01:1220102",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "Липецкая область, Воловский район, с. Набережное (восточное)",
+          "deal_type": "аренда/покупка",
+          "lease_term_years": 49,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 1400,
+            "distance_to_substation_km": 0.4,
+            "grid_connection_price_rub_per_kw": 6680.79
+          }
+        },
+        {
+          "area_ha": 4.2,
+          "land_plot_number": "48:14:0600107:1",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "Липецкая область, Становлянкий район, с. Становое",
+          "deal_type": "аренда/покупка",
+          "lease_term_years": 30,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 900,
+            "distance_to_substation_km": 0.3,
+            "grid_connection_price_rub_per_kw": 6680.80
+          }
+        }
+      ]
+    },
+    {
+      "id": "chel",
+      "name": "Челябинская область",
+      "coords": [ 55.155, 61.439 ],
+      "4.1_logistics": {
+        "steel_distance_to_plant_km": 249,
+        "steel_distance_to_dealer_km": 15,
+        "insulation_distance_to_plant_km": 10,
+        "insulation_distance_to_dealer_km": 10
+      },
+      "4.2_social": {
+        "environment_index": 202,
+        "kindergartens_per_100_children": 100,
+        "vocational_colleges_count": 12,
+        "rent_1room_avg_rub": 24000
+      },
+      "4.3_economics": {
+        "tax_incentives": "ТОР",
+        "insurance_reduction": true,
+        "energy_tariff_rub_per_kwh": 5.4,
+        "avg_salary_rub": 80780,
+        "ecology_class": 8
+      },
+      "4.5_cultural_code": {
+        "architecture_styles": [ "советский монументальный классицизм", "конструктивизм", "хай-тек", "урбанизм" ],
+        "traditional_materials": [ "облицовочный гранит", "сталь", "чугун" ],
+        "color_profile": [ "графитовый", "стальной серый", "темно-зеленый", "охристый" ],
+        "ornaments": [ "каслинское чугунное литье", "златоустовская гравюра" ]
+      },
+      "sites": [
+        {
+          "area_ha": 49,
+          "land_plot_number": "74:12:1205002:71",
+          "price_rub": 890000000,
+          "price_condition": null,
+          "address": "Челябинская область, р-н Красноармейский, слева по ходу от автодороги Челябинск-Новосибирск перед мостом через железную дорогу",
+          "deal_type": "продажа",
+          "lease_term_years": 0,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 1600,
+            "distance_to_substation_km": 0.5,
+            "grid_connection_price_rub_per_kw": 4500
+          }
+        },
+        {
+          "area_ha": 11.9,
+          "land_plot_number": "74:38:0114002:3",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "г. Чебаркуль, 7-ой километр автодороги Чебаркуль-Архангельское, № 1",
+          "deal_type": "аренда",
+          "lease_term_years": 10,
+          "4.4_infrastructure": {
+            "gas_available": false,
+            "free_power_kva": 1500,
+            "distance_to_substation_km": 0.4,
+            "grid_connection_price_rub_per_kw": 4500
+          }
+        }
+      ]
+    },
+    {
+      "id": "sve",
+      "name": "Свердловская область",
+      "coords": [ 56.838, 60.597 ],
+      "4.1_logistics": {
+        "steel_distance_to_plant_km": 360,
+        "steel_distance_to_dealer_km": 40,
+        "insulation_distance_to_plant_km": 540,
+        "insulation_distance_to_dealer_km": 75
+      },
+      "4.2_social": {
+        "environment_index": 203,
+        "kindergartens_per_100_children": 97,
+        "vocational_colleges_count": 18,
+        "rent_1room_avg_rub": 26000
+      },
+      "4.3_economics": {
+        "tax_incentives": "ОЭЗ",
+        "insurance_reduction": true,
+        "energy_tariff_rub_per_kwh": 5.2,
+        "avg_salary_rub": 88760,
+        "ecology_class": 7.5
+      },
+      "4.5_cultural_code": {
+        "architecture_styles": [ "конструктивизм", "уральское барокко", "промышленная готика", "модернизм" ],
+        "traditional_materials": [ "гранит", "мрамор", "медь", "чугун" ],
+        "color_profile": [ "темно-серый", "медный", "изумрудный", "хвойный", "белый" ],
+        "ornaments": [ "растительные узоры", "бажовские мотивы (ящерицы, каменные цветы)" ]
+      },
+      "sites": [
+        {
+          "area_ha": 9,
+          "land_plot_number": "66:51:0105014",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "г. Красноуральск, Площадка № 4 (район железной дороги станция Медь-Рудник Волковский)",
+          "deal_type": "аренда",
+          "lease_term_years": 49,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 900,
+            "distance_to_substation_km": 0.2,
+            "grid_connection_price_rub_per_kw": 5199.69
+          }
+        },
+        {
+          "area_ha": 2,
+          "land_plot_number": "66:51:0108001",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "г. Красноуральск, Площадка № 6 (район полигона ТБО)",
+          "deal_type": "аренда",
+          "lease_term_years": 49,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 1100,
+            "distance_to_substation_km": 0.5,
+            "grid_connection_price_rub_per_kw": 5199.70
+          }
+        }
+      ]
+    },
+    {
+      "id": "niz",
+      "name": "Нижегородская область",
+      "coords": [ 56.296, 43.936 ],
+      "4.1_logistics": {
+        "steel_distance_to_plant_km": 1040,
+        "steel_distance_to_dealer_km": 15,
+        "insulation_distance_to_plant_km": 950,
+        "insulation_distance_to_dealer_km": 100
+      },
+      "4.2_social": {
+        "environment_index": 207,
+        "kindergartens_per_100_children": 98,
+        "vocational_colleges_count": 10,
+        "rent_1room_avg_rub": 30000
+      },
+      "4.3_economics": {
+        "tax_incentives": "ОЭЗ",
+        "insurance_reduction": true,
+        "energy_tariff_rub_per_kwh": 6.4,
+        "avg_salary_rub": 80780,
+        "ecology_class": 4.5
+      },
+      "4.5_cultural_code": {
+        "architecture_styles": [ "нижегородский модерн", "деревянное зодчество", "классицизм", "советский футуризм" ],
+        "traditional_materials": [ "резное дерево", "белый кирпич", "штукатурка" ],
+        "color_profile": [ "золотой", "огненно-красный", "черный", "кремовый", "кирпичный" ],
+        "ornaments": [ "хохломская роспись", "городецкие сюжеты" ]
+      },
+      "sites": [
+        {
+          "area_ha": 1.1,
+          "land_plot_number": "52:56:0600001:664",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "Нижегородская область, г. Первомайск, территория Промузел Северный, земельный участок 8",
+          "deal_type": "аренда",
+          "lease_term_years": null,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 10000,
+            "distance_to_substation_km": 1.5,
+            "grid_connection_price_rub_per_kw": 4500
+          }
+        },
+        {
+          "area_ha": 10,
+          "land_plot_number": "52:41:0702002:16",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "Нижегородская область, городской округ город Арзамас, в районе деревни Кокаревка",
+          "deal_type": "аренда",
+          "lease_term_years": 49,
+          "4.4_infrastructure": {
+            "gas_available": false,
+            "free_power_kva": 10000,
+            "distance_to_substation_km": 1.2,
+            "grid_connection_price_rub_per_kw": 4500
+          }
+        }
+      ]
+    },
+    {
+      "id": "sam",
+      "name": "Самарская область",
+      "coords": [ 53.195, 50.101 ],
+      "4.1_logistics": {
+        "steel_distance_to_plant_km": 560,
+        "steel_distance_to_dealer_km": 15,
+        "insulation_distance_to_plant_km": 430,
+        "insulation_distance_to_dealer_km": 20
+      },
+      "4.2_social": {
+        "environment_index": 192,
+        "kindergartens_per_100_children": 97,
+        "vocational_colleges_count": 11,
+        "rent_1room_avg_rub": 25000
+      },
+      "4.3_economics": {
+        "tax_incentives": "ОЭЗ",
+        "insurance_reduction": true,
+        "energy_tariff_rub_per_kwh": 5.9,
+        "avg_salary_rub": 76620,
+        "ecology_class": 5
+      },
+      "4.5_cultural_code": {
+        "architecture_styles": [ "самарский модерн", "купеческая эклектика", "советский брутализм" ],
+        "traditional_materials": [ "глазурованная плитка", "кованое железо", "резное дерево" ],
+        "color_profile": [ "нежно-бирюзовый", "пастельный зеленый", "песчано-желтый", "лазурный" ],
+        "ornaments": [ "волжские мотивы (волны, солярные знаки)" ]
+      },
+      "sites": [
+        {
+          "area_ha": 6.78,
+          "land_plot_number": "63:27:0704001",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "Самарская область, город Нефтегорск",
+          "deal_type": "аренда",
+          "lease_term_years": null,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 1400,
+            "distance_to_substation_km": 0.6,
+            "grid_connection_price_rub_per_kw": 6504.48
+          }
+        },
+        {
+          "area_ha": 0.7,
+          "land_plot_number": "63:07:0204005:7",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "Самарская область, г. Похвистнево, ул.",
+          "deal_type": "аренда",
+          "lease_term_years": null,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 1000,
+            "distance_to_substation_km": 1,
+            "grid_connection_price_rub_per_kw": 6504.49
+          }
+        }
+      ]
+    },
+    {
+      "id": "krd",
+      "name": "Краснодарский край",
+      "coords": [ 45.036, 38.976 ],
+      "4.1_logistics": {
+        "steel_distance_to_plant_km": 30,
+        "steel_distance_to_dealer_km": 30,
+        "insulation_distance_to_plant_km": 10,
+        "insulation_distance_to_dealer_km": 10
+      },
+      "4.2_social": {
+        "environment_index": 190,
+        "kindergartens_per_100_children": 97,
+        "vocational_colleges_count": 9,
+        "rent_1room_avg_rub": 27000
+      },
+      "4.3_economics": {
+        "tax_incentives": "промпарки",
+        "insurance_reduction": false,
+        "energy_tariff_rub_per_kwh": 7.8,
+        "avg_salary_rub": 76110,
+        "ecology_class": 3
+      },
+      "4.5_cultural_code": {
+        "architecture_styles": [ "южно-российская эклектика", "курортный неоклассицизм", "мавританский стиль" ],
+        "traditional_materials": [ "ракушечник", "белый известняк", "черепица", "штукатурка" ],
+        "color_profile": [ "белоснежный", "терракотовый", "морская лазурь", "персиковый", "оливковый" ],
+        "ornaments": [ "средиземноморские мотивы", "кавказские мотивы (виноградная лоза, пальмовые ветви, солнце)" ]
+      },
+      "sites": [
+        {
+          "area_ha": 17.74,
+          "land_plot_number": "23:14:000000:945",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "Краснодарский край, Крыловский район, Крыловская станица, территория СПК «Восход»",
+          "deal_type": "аренда",
+          "lease_term_years": 49,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 1500,
+            "distance_to_substation_km": 0.5,
+            "grid_connection_price_rub_per_kw": 4500
+          }
+        },
+        {
+          "area_ha": 1.6,
+          "land_plot_number": "23:01:0804327:1023",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "Краснодарский край, Абинский район, поселок городского типа Ахтырский",
+          "deal_type": "аренда",
+          "lease_term_years": 49,
+          "4.4_infrastructure": {
+            "gas_available": false,
+            "free_power_kva": 1500,
+            "distance_to_substation_km": 1.1,
+            "grid_connection_price_rub_per_kw": 4500
+          }
+        }
+      ]
+    },
+    {
+      "id": "nvs",
+      "name": "Новосибирская область",
+      "coords": [ 55.008, 82.935 ],
+      "4.1_logistics": {
+        "steel_distance_to_plant_km": 2700,
+        "steel_distance_to_dealer_km": 100,
+        "insulation_distance_to_plant_km": 1800,
+        "insulation_distance_to_dealer_km": 45
+      },
+      "4.2_social": {
+        "environment_index": 178,
+        "kindergartens_per_100_children": 96,
+        "vocational_colleges_count": 11,
+        "rent_1room_avg_rub": 28000
+      },
+      "4.3_economics": {
+        "tax_incentives": "ТОР",
+        "insurance_reduction": true,
+        "energy_tariff_rub_per_kwh": 5.1,
+        "avg_salary_rub": 86540,
+        "ecology_class": 6.5
+      },
+      "4.5_cultural_code": {
+        "architecture_styles": [ "сибирский конструктивизм", "советский академический классицизм", "сибирское деревянное барокко" ],
+        "traditional_materials": [ "серый бетон", "стекло", "сибирский кедр", "лиственница" ],
+        "color_profile": [ "холодный серый", "синий", "древесный", "белый" ],
+        "ornaments": [ "сибирская сквозная резьба по дереву (геометрическая, кружевная)" ]
+      },
+      "sites": [
+        {
+          "area_ha": 2.1,
+          "land_plot_number": "54:18:020401:4518",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "Новосибирская область, Мошковский район",
+          "deal_type": "аренда",
+          "lease_term_years": 49,
+          "4.4_infrastructure": {
+            "gas_available": false,
+            "free_power_kva": 1500,
+            "distance_to_substation_km": 0.3,
+            "grid_connection_price_rub_per_kw": 8250
+          }
+        },
+        {
+          "area_ha": 1.72,
+          "land_plot_number": "54:19:022201:1350",
+          "price_rub": 5865087,
+          "price_condition": null,
+          "address": "Новосибирская область, Новосибирский район",
+          "deal_type": "аренда",
+          "lease_term_years": 49,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 800,
+            "distance_to_substation_km": 1.2,
+            "grid_connection_price_rub_per_kw": 8250
+          }
+        }
+      ]
+    },
+    {
+      "id": "klu",
+      "name": "Калужская область",
+      "coords": [ 54.512, 36.247 ],
+      "4.1_logistics": {
+        "steel_distance_to_plant_km": 90,
+        "steel_distance_to_dealer_km": 90,
+        "insulation_distance_to_plant_km": 170,
+        "insulation_distance_to_dealer_km": 80
+      },
+      "4.2_social": {
+        "environment_index": 204,
+        "kindergartens_per_100_children": 96,
+        "vocational_colleges_count": 8,
+        "rent_1room_avg_rub": 23000
+      },
+      "4.3_economics": {
+        "tax_incentives": "ОЭЗ",
+        "insurance_reduction": true,
+        "energy_tariff_rub_per_kwh": 6.1,
+        "avg_salary_rub": 83930,
+        "ecology_class": 2.5
+      },
+      "4.5_cultural_code": {
+        "architecture_styles": [ "калужское барокко", "классицизм", "эко-тек", "футуризм" ],
+        "traditional_materials": [ "белый камень", "красный кирпич", "дерево" ],
+        "color_profile": [ "белый", "усадебный желтый", "ярко-красный", "травяной зеленый" ],
+        "ornaments": [ "тарусская вышивка (геометрические узоры красным по белому)" ]
+      },
+      "sites": [
+        {
+          "area_ha": 5.1,
+          "land_plot_number": "40:08:110603:10",
+          "price_rub": 62,
+          "price_condition": null,
+          "address": "Износковский район, п. Мятлево",
+          "deal_type": "аренда",
+          "lease_term_years": null,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 600,
+            "distance_to_substation_km": 2,
+            "grid_connection_price_rub_per_kw": 4500
+          }
+        }
+      ]
+    },
+    {
+      "id": "tul",
+      "name": "Тульская область",
+      "coords": [ 54.197, 37.618 ],
+      "4.1_logistics": {
+        "steel_distance_to_plant_km": 240,
+        "steel_distance_to_dealer_km": 110,
+        "insulation_distance_to_plant_km": 25,
+        "insulation_distance_to_dealer_km": 15
+      },
+      "4.2_social": {
+        "environment_index": 202,
+        "kindergartens_per_100_children": 96,
+        "vocational_colleges_count": 8,
+        "rent_1room_avg_rub": 27000
+      },
+      "4.3_economics": {
+        "tax_incentives": "ОЭЗ",
+        "insurance_reduction": true,
+        "energy_tariff_rub_per_kwh": 6.3,
+        "avg_salary_rub": 70500,
+        "ecology_class": 5.5
+      },
+      "4.5_cultural_code": {
+        "architecture_styles": [ "нарышкинское барокко", "классицизм", "промышленная краснокирпичная архитектура" ],
+        "traditional_materials": [ "красный обожженный кирпич", "белый известняк" ],
+        "color_profile": [ "кирпично-красный", "белый", "малиновый", "лимонно-желтый" ],
+        "ornaments": [ "филимоновская игрушка (яркие полосы)", "тульская чеканка" ]
+      },
+      "sites": [
+        {
+          "area_ha": 1.67,
+          "land_plot_number": "71:20:040101:338",
+          "price_rub": null,
+          "price_condition": "Стоимость определяется в ходе торгов",
+          "address": "Тульская область, Узловский район, МО Смородинское, 1000 м на северо-восток от д. Ушаково",
+          "deal_type": "аренда/покупка",
+          "lease_term_years": null,
+          "4.4_infrastructure": {
+            "gas_available": false,
+            "free_power_kva": 750,
+            "distance_to_substation_km": 1.4,
+            "grid_connection_price_rub_per_kw": 4500
+          }
+        }
+      ]
+    },
+    {
+      "id": "bash",
+      "name": "Республика Башкортостан",
+      "coords": [ 54.735, 55.959 ],
+      "4.1_logistics": {
+        "steel_distance_to_plant_km": 130,
+        "steel_distance_to_dealer_km": 130,
+        "insulation_distance_to_plant_km": 40,
+        "insulation_distance_to_dealer_km": 40
+      },
+      "4.2_social": {
+        "environment_index": 207,
+        "kindergartens_per_100_children": 97,
+        "vocational_colleges_count": 13,
+        "rent_1room_avg_rub": 24000
+      },
+      "4.3_economics": {
+        "tax_incentives": "ОЭЗ",
+        "insurance_reduction": true,
+        "energy_tariff_rub_per_kwh": 5.5,
+        "avg_salary_rub": 74240,
+        "ecology_class": 4.8
+      },
+      "4.5_cultural_code": {
+        "architecture_styles": [ "советский монументализм с национальным колоритом", "восточная эклектика", "хай-тек" ],
+        "traditional_materials": [ "гранит", "мрамор", "медь", "дерево" ],
+        "color_profile": [ "нефритово-зеленый", "золотисто-желтый", "белый", "лазурно-синий" ],
+        "ornaments": [ "кускар (рога барана)", "солярные круги", "S-образные узоры" ]
+      },
+      "sites": [
+        {
+          "area_ha": 0.00493,
+          "land_plot_number": "02:56:040403:2819",
+          "price_rub": 329379,
+          "price_condition": null,
+          "address": "Республика Башкортостан, город Стерлитамак, улица Западная, дом 3",
+          "deal_type": "аренда",
+          "lease_term_years": null,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 800,
+            "distance_to_substation_km": 0.9,
+            "grid_connection_price_rub_per_kw": 6163.46
+          }
+        },
+        {
+          "area_ha": 0.5806,
+          "land_plot_number": "5806 кв",
+          "price_rub": 3511527,
+          "price_condition": null,
+          "address": "Республика Башкортостан, город Стерлитамак, около улицы Бабушкина, д.171, уч. 5",
+          "deal_type": "продажа",
+          "lease_term_years": null,
+          "4.4_infrastructure": {
+            "gas_available": true,
+            "free_power_kva": 700,
+            "distance_to_substation_km": 1,
+            "grid_connection_price_rub_per_kw": 6163.46
+          }
+        }
+      ]
+    }
+  ]
+}
